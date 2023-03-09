@@ -1,0 +1,25 @@
+{
+  "name": "videooodownloadbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "index index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shoxruz-Abduraxmon/VideoooDownloadBot.git"
+  },
+  "author": "Shoxruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shoxruz-Abduraxmon/VideoooDownloadBot/issues"
+  },
+  "homepage": "https://github.com/Shoxruz-Abduraxmon/VideoooDownloadBot#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-telegram-bot-api": "^0.61.0",
+    "ytdl-core": "^4.11.2"
+  }
+}
