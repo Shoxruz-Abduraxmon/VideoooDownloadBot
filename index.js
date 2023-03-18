@@ -13,14 +13,22 @@ bot.on('message', async(msg) => {
         const userName = msg.from.username;
     bot.sendMessage(chatId, `Assalomu aleykum <b>${full_name}</b>, bizga murojat qilganingizdan xursandmiz, biz bilan qoling `, {
         parse_mode: 'HTML'
-    });
+    })
 
     }
 
     else if(ytdl.validateURL(msg.text)){
-        let info = await ytdl.getInfo(msg.text)
+        async function botSendVideo(){
+          await  bot.sendMessage(chatId, "Video link qabul qilindi, iltimos kuting")
+            let info = await ytdl.getInfo(msg.text);
+            let video_title =  info.videoDetails.title;
 
-        ytdl(msg.text).pipe(fs.createWriteStream('video1.mp4'))
+            ytdl(msg.text)
+            .pipe(fs.createWriteStream(`videos/${video_title}.mp4`))
+           await bot.sendVideo(chatId, `videos/${video_title}.mp4`)
+        }
+
+        botSendVideo();
     }
 });
     
